@@ -15,10 +15,8 @@
 
     (rl/init-window! width height "Game of life")
     (rl/set-target-fps! 30)
-    (loop [gr (g/apply-noise {:width box-width
-                              :height box-height
-                              :field (repeat (* box-width box-height) :dead)}
-                             0.5)]
+
+    (loop [gr (g/generate-noisy-grid box-width box-height 0.5)]
       (when-not (rl/window-should-close?)
         (rl/with-drawing
           (rl/clear-background! rl/BLACK)
@@ -28,4 +26,5 @@
                                 (- box-dimension 1) (- box-dimension 1)
                                 (if (= (g/get-elem gr i j) :alive) rl/WHITE rl/BLACK))))
         (recur (g/run-gol-step gr))))
+    
     (rl/close-window!)))

@@ -19,10 +19,12 @@
   [gr, i, j]
   (get (:field gr) (coord->index gr i j)))
 
-(defn apply-noise
-  "Apply noise to the grid. Each cell becomes alive with probability prob"
-  [gr, prob]
-  (assoc gr :field (vec (map (fn [_] (if (< (rand) prob) :alive :dead)) (:field gr)))))
+(defn generate-noisy-grid
+  "Return a ixj grid filled with randomly alive cells according to probability prob"
+  [i j prob]
+  {:width i
+   :height j
+   :field (vec (repeatedly (* i j) #(if (< (rand) prob) :alive :dead)))})
 
 (defn neighbor-states
   "Get states of surrounding cells"

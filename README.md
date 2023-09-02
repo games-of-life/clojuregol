@@ -1,44 +1,35 @@
 # clojuregol
 
-FIXME: description
+A [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) in Clojure.
+
+All graphics done with [Raylib](https://www.raylib.com/)
 
 ## Installation
 
-Download from http://example.com/FIXME.
+[Leiningen](https://leiningen.org/) required
+
+Install dependencies with
+
+```bash
+lein install
+```
 
 ## Usage
 
-FIXME: explanation
+To interpret:
 
-    $ java -jar clojuregol-0.1.0-standalone.jar [args]
+```bash
+lein run
+```
 
-## Options
+To compile into jar:
 
-FIXME: listing of options this app accepts.
+```bash
+lein uberjar
+```
 
-## Examples
+To run jar:
 
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2023 FIXME
-
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
-
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+```bash
+java -jar target/uberjar/clojuregol-0.1.0-standalone.jar
+```

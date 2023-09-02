@@ -24,7 +24,8 @@
                   j (range box-height)]
             (rl/draw-rectangle! (* box-dimension i) (* box-dimension j)
                                 (- box-dimension 1) (- box-dimension 1)
-                                (if (= (g/get-elem gr i j) :alive) rl/WHITE rl/BLACK))))
+                                (if (= (g/get-elem gr i j) :alive) rl/WHITE rl/BLACK)))
+          (rl/draw-fps! 20 20))
         (recur (g/run-gol-step gr))))
-    
+
     (rl/close-window!)))

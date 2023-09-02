@@ -6,7 +6,7 @@
 (def width 800)
 (def height 600)
 
-(def box-dimension 2)
+(def box-dimension 10)
 
 (defn -main
   [& _]

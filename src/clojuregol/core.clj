@@ -16,7 +16,7 @@
     (rl/init-window! width height "Game of life")
     (rl/set-target-fps! 30)
 
-    (loop [gr (g/generate-noisy-grid box-width box-height 0.5)]
+    (loop [gr (g/random-field box-width box-height 0.5)]
       (when-not (rl/window-should-close?)
         (rl/with-drawing
           (rl/clear-background! rl/BLACK)
@@ -24,8 +24,8 @@
                   j (range box-height)]
             (rl/draw-rectangle! (* box-dimension i) (* box-dimension j)
                                 (- box-dimension 1) (- box-dimension 1)
-                                (if (= (g/get-elem gr i j) :alive) rl/WHITE rl/BLACK)))
+                                (if (contains? gr [i j]) rl/WHITE rl/BLACK)))
           (rl/draw-fps! 20 20))
-        (recur (g/run-gol-step gr))))
+        (recur (g/run-gol-step gr box-width box-height))))
 
     (rl/close-window!)))

@@ -14,7 +14,7 @@
         box-height (/ height box-dimension)]
 
     (rl/init-window! width height "Game of life")
-    (rl/set-target-fps! 30)
+    ;; (rl/set-target-fps! 30)
 
     (loop [gr {:width box-width
                :height box-height

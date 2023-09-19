@@ -1,0 +1,2 @@
+{:deps
+ {clj-raylib/clj-raylib {:mvn/version "0.0.1"}}}

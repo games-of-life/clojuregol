@@ -9,6 +9,6 @@ All graphics done with [Raylib](https://www.raylib.com/)
 To interpret:
 
 ```bash
-clojure -X clojuregol.core/-main
+clj -X clojuregol.core/-main
 ```
 
